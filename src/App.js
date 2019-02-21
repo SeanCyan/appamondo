@@ -55,7 +55,7 @@ class App extends Component {
     };
 };  
 
-  updateTicket = () => { // NPM package 'Zendesk NodeJS API'
+  updateTicket = () => { // NPM package 'Zendesk NodeJS API' used for ticket update
     const Zendesk = require('zendesk-node-api');
  
     const zendesk = new Zendesk({
@@ -102,7 +102,7 @@ class App extends Component {
                             object.crs_code]);
             }))
         }
-        setTimeout(() => {
+        setTimeout(() => { //setTimeout to ensure fetch request resolves before setState re-renders
           this.setState({
             csvData: codes,
           })
